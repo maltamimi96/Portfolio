@@ -1,42 +1,39 @@
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500;700&display=swap');
+
   header {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: center;
-    background-color: rgb(246, 249, 252);
+    background-color: #4d5052;
     padding-top: 40px;
 
-}
-body {
-    background-color: rgb(246, 249, 252);
 }
 
 ul {
     display: flex; 
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    padding-top: 20px;
+   
 
 }
 
 li {
-    padding: 0px 10px;
-    list-style: none;
-
-    font-size: 25px;
-    margin-right: 5px;
-    color: #26282a;
     
-    height: 80px;
-    width: 120px;
+    list-style: none;
+    font-size: 25px;
+    margin-left:10px;
+    margin-right:10px;
+    
+
     
 
 }
 a{
     font-weight: 500;
-    color: #26282a;
+    color: rgb(228, 220, 220);
 
 text-decoration: none;
 }
@@ -47,9 +44,11 @@ text-decoration: none;
   <a href="#"><img src="/Resources/images/mylogo.png" width="250" height="100"> </a>
   <nav>
       <ul class="nav__links">
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="#">About Me</a></li>
+          <li><a href="#">Resume</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+          
      
       </ul>
   </nav>
@@ -66,13 +65,13 @@ text-decoration: none;
 `;
 
 class navBar extends HTMLElement {
-    constructor (){
+    constructor() {
         super();
-        this.attachShadow({mode:'open'});
-        this.shadowRoot.appendChild(template.content.cloneNode(true) );
-        
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+
         this.innerHtml = 'NaVBAR';
     }
-    
+
 }
-window.customElements.define ('nav-bar',navBar);
+window.customElements.define('nav-bar', navBar);

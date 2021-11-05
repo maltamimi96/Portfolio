@@ -1,0 +1,95 @@
+$primary-colour:#4d5052;
+$secondary-colour:white;
+$glow-colour:rgba(13, 183, 250, 0.2);
+
+
+
+@mixin button ()
+{
+    border-radius:  25px; 
+    
+    background-color: $primary-colour;
+    color:$secondary-colour;
+    border-color: rgb(133, 161, 238);
+    height:2rem;
+    width: 8rem;
+    box-shadow: 0 4px 8px 0 $glow-colour;
+    transition: 0.3s;
+
+    
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500;700&display=swap');
+*
+{
+    box-sizing: border-box;
+
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color:$primary-colour ;
+    color:$secondary-colour;
+}
+
+main{
+    padding: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    .right-main{
+        width: 50%;
+        height: 100%;
+        
+    }
+    img{
+        width: 400px;
+        height:400px;
+        border-radius: 50%;
+        border-color: #26282a;
+
+    }
+    button{
+        @include button();
+    }
+    button:hover{
+        box-shadow: 0 40px 80px 0 $glow-colour;
+    }
+    
+    }
+   
+.card-container{
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+
+
+}   
+
+
+.skill-card{
+    display: flex;
+    justify-content: start;
+    width: 400px;
+    height: 200px;
+    h1,p{
+        margin: 0;
+        box-shadow: 5px 10px 20px 5px $glow-colour;
+    }
+   
+    img{
+       
+        width: 50px;
+        height: 50px;
+    }
+
+
+}
+
