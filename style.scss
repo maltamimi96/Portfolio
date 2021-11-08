@@ -1,6 +1,11 @@
-$primary-colour:#4d5052;
+$primary-colour:#222;
 $secondary-colour:white;
 $glow-colour:rgba(13, 183, 250, 0.2);
+$icon-colour:#007ced;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500;700&display=swap');
 
 
 
@@ -8,20 +13,20 @@ $glow-colour:rgba(13, 183, 250, 0.2);
 {
     border-radius:  25px; 
     
-    background-color: $primary-colour;
+    background-color: $icon-colour;
     color:$secondary-colour;
-    border-color: rgb(133, 161, 238);
+    border-color: rgb(11, 94, 172);
     height:2rem;
     width: 8rem;
     box-shadow: 0 4px 8px 0 $glow-colour;
     transition: 0.3s;
+    
 
     
 }
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500;700&display=swap');
 *
 {
     box-sizing: border-box;
@@ -38,7 +43,7 @@ body
 }
 
 main{
-    padding: 40px;
+    padding: 20px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -51,8 +56,11 @@ main{
     img{
         width: 400px;
         height:400px;
-        border-radius: 50%;
+        border-radius: 2%;
         border-color: #26282a;
+        border-style: solid;
+        box-shadow: 0 40px 80px 0 $glow-colour;
+        border-color: aliceblue;
 
     }
     button{
@@ -60,36 +68,55 @@ main{
     }
     button:hover{
         box-shadow: 0 40px 80px 0 $glow-colour;
+        background-color: $icon-colour;
     }
     
     }
    
-.card-container{
-    display:flex;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-    flex-wrap: wrap;
 
 
-}   
-
-
-.skill-card{
+//Row for Skills
+.row{
     display: flex;
     justify-content: start;
-    width: 400px;
-    height: 200px;
-    h1,p{
+    flex-wrap: wrap;
+    margin-left: 5%;
+
+}    
+.skill-field{
+display: flex;    
+flex-basis: 600px;
+max-height: 200px;
+margin-bottom: 20px;
+
+
+    h1{
         margin: 0;
-        box-shadow: 5px 10px 20px 5px $glow-colour;
+        padding: 0;
     }
-   
-    img{
-       
-        width: 50px;
-        height: 50px;
+    i{
+        color: $icon-colour;
+        margin-right: 10px;
     }
 
+}
+.section-header{
+    margin-left: 5%;
+    
+    
+}
+
+.sub-line{
+    background-color: $icon-colour;
+    width: 200px;
+    height: 10px;
+    margin-bottom: 100px;
+    margin-left: 5%;
 
 }
 
+/*Responsive Design*/
+
+@media screen and (max-width: 600px) {
+    
+}

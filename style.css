@@ -8,12 +8,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #4d5052;
+  background-color: #222;
   color: white;
 }
 
 main {
-  padding: 40px;
+  padding: 20px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -26,14 +26,17 @@ main .right-main {
 main img {
   width: 400px;
   height: 400px;
-  border-radius: 50%;
+  border-radius: 2%;
   border-color: #26282a;
+  border-style: solid;
+  box-shadow: 0 40px 80px 0 rgba(13, 183, 250, 0.2);
+  border-color: aliceblue;
 }
 main button {
   border-radius: 25px;
-  background-color: #4d5052;
+  background-color: #007ced;
   color: white;
-  border-color: #85a1ee;
+  border-color: #0b5eac;
   height: 2rem;
   width: 8rem;
   box-shadow: 0 4px 8px 0 rgba(13, 183, 250, 0.2);
@@ -41,29 +44,43 @@ main button {
 }
 main button:hover {
   box-shadow: 0 40px 80px 0 rgba(13, 183, 250, 0.2);
+  background-color: #007ced;
 }
 
-.card-container {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.skill-card {
+.row {
   display: flex;
   justify-content: start;
-  width: 400px;
-  height: 200px;
+  flex-wrap: wrap;
+  margin-left: 5%;
 }
-.skill-card h1, .skill-card p {
+
+.skill-field {
+  display: flex;
+  flex-basis: 600px;
+  max-height: 200px;
+  margin-bottom: 20px;
+}
+.skill-field h1 {
   margin: 0;
-  box-shadow: 5px 10px 20px 5px rgba(13, 183, 250, 0.2);
+  padding: 0;
 }
-.skill-card img {
-  box-shadow: 5px 10px 20px 5px rgba(13, 183, 250, 0.2);
-  width: 50px;
-  height: 50px;
+.skill-field i {
+  color: #007ced;
+  margin-right: 10px;
 }
+
+.section-header {
+  margin-left: 5%;
+}
+
+.sub-line {
+  background-color: #007ced;
+  width: 200px;
+  height: 10px;
+  margin-bottom: 100px;
+  margin-left: 5%;
+}
+
+/*Responsive Design*/
 
 /*# sourceMappingURL=style.css.map */

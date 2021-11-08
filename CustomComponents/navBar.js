@@ -7,7 +7,7 @@ template.innerHTML = `
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
-    background-color: #4d5052;
+    background-color: #222;
     padding-top: 40px;
 
 }
@@ -56,12 +56,15 @@ text-decoration: none;
   <ul>
       <li><img src="/Resources/images/github.svg" width="100" height="40"></li>
       <li><img src="/Resources/images/linkedin-square.svg" width="100" height="40"></li>
+      <i class="fab fa-github"></i>
 
 
       
   </ul>
 
 </header>
+
+
 `;
 
 class navBar extends HTMLElement {
