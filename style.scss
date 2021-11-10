@@ -2,27 +2,27 @@ $primary-colour:#222;
 $secondary-colour:white;
 $glow-colour:rgba(13, 183, 250, 0.2);
 $icon-colour:#007ced;
-
+$banner-colour:#252525;
+$border-colour:rgb(73, 71, 71) ;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500;700&display=swap');
 
 
-
+// mixin for all buttons
 @mixin button ()
 {
-    border-radius:  25px; 
-    
+    border-radius:  25px;
     background-color: $icon-colour;
     color:$secondary-colour;
     border-color: rgb(11, 94, 172);
-    height:2rem;
-    width: 8rem;
+    font-size: 20px;
+    height:3rem;
+    width: 12rem;
     box-shadow: 0 4px 8px 0 $glow-colour;
     transition: 0.3s;
-    
+    text-align: center;
 
-    
 }
 
 
@@ -41,8 +41,56 @@ body
     background-color:$primary-colour ;
     color:$secondary-colour;
 }
+//main styling for icons
+i{
+    color: $icon-colour;
+    margin-right: 10px;
+}
+i:hover{
+    color:white;
+}
 
-main{
+//anchor tag styling
+a{
+    font-weight: 500;
+    color: rgb(228, 220, 220);
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover{
+    color: $icon-colour;
+}
+// header/navbar/logo for all pages
+header{
+
+    display: flex;
+    justify-content: space-evenly;
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+    //nested logo list
+        }
+
+    ul{
+            display: flex;
+                li{
+                    list-style: none;
+                    margin-right: 15px;
+                    padding-top: 10px;
+                    font-size: 20px;
+                    text-align: center
+                }
+
+       }
+
+    margin-bottom: 100px;
+    border-bottom: solid;
+    border-color:rgb(73, 71, 71) ;
+
+}
+main
+{
     padding: 20px;
     display: flex;
     justify-content: space-evenly;
@@ -51,7 +99,6 @@ main{
     .right-main{
         width: 50%;
         height: 100%;
-        
     }
     img{
         width: 400px;
@@ -71,52 +118,155 @@ main{
         background-color: $icon-colour;
     }
     
-    }
-   
+}
 
 
-//Row for Skills
-.row{
+
+//Row for Skills section on homepage
+.row
+{
     display: flex;
-    justify-content: start;
+    justify-content:center;
     flex-wrap: wrap;
-    margin-left: 5%;
-
-}    
-.skill-field{
-display: flex;    
-flex-basis: 600px;
-max-height: 200px;
-margin-bottom: 20px;
-
-
-    h1{
+    margin-left: 6%;
+    margin-right: 6%;
+}
+.skill-field
+{
+    display: flex;
+    flex-basis: 800px;
+    max-height: 400px;
+    .icon
+    {
+        margin-right: 20px;
+    }
+    h1
+    {
         margin: 0;
         padding: 0;
     }
-    i{
-        color: $icon-colour;
-        margin-right: 10px;
+
+}
+//contains Headings for sections
+.banner
+{
+    width:100% ;
+    background-color: $banner-colour;
+    height: 200px;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: $border-colour;
+    border-width: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    h1{
+        font-size: 50px;
+        margin: 1px;
     }
 
 }
-.section-header{
-    margin-left: 5%;
-    
-    
-}
-
-.sub-line{
+//blue underline for stlying
+.sub-line
+{
     background-color: $icon-colour;
     width: 200px;
     height: 10px;
-    margin-bottom: 100px;
-    margin-left: 5%;
+}
+.blog-card{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
 
+    img
+        {
+            width: 600px;
+            height: 280px;
+            border-radius: 1%;
+
+            box-shadow: 0 4px 8px 0 $glow-colour;
+            margin: 10px;
+
+
+        }
+
+    .blog-info{
+        
+        border-radius: 5px;
+        label{
+            color: green;
+
+        }
+        padding-left: 12px;
+        h4{
+            
+            margin-top: 0;
+        }
+
+    }
+}
+
+
+footer
+{
+    display: flex;
+    flex-wrap: wrap;
+    border-top: solid;
+    border-color:rgb(73, 71, 71) ;
+    justify-content: flex-start;
+    .socials{
+        display: flex;
+
+        li{
+            list-style: none;
+            margin-left:10px;
+            margin-right:10px;
+        }
+    }
+    h4{
+
+        margin-left: auto ;
+        margin-right:25px ;
+        margin-top: 12px;
+        color: $icon-colour;
+    }
 }
 
 /*Responsive Design*/
 
-@media screen and (max-width: 600px) {
-    
+@media screen and (max-width: 900px) {
+    .row{
+        flex-direction: column;
+
+    }
+
+    header{
+         flex-direction: column;
+         align-items: center;
+        nav{
+            ul{
+                flex-direction: column;
+            }
+        }
+    }
+
+    footer{
+        
+        flex-direction: column;
+        align-items: center;
+        ul{
+            flex-wrap: wrap;
+        }
+        h4{
+            margin-left: 0;
+
+        }
+
+
+    }
+
 }
+

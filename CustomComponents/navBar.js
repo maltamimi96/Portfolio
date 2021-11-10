@@ -1,5 +1,6 @@
 const template = document.createElement('template');
 template.innerHTML = `
+<script src="/CustomComponents/navBar.js"></script>
   <style>
 
   header {
@@ -40,31 +41,22 @@ text-decoration: none;
 
   </style>
   <header>
-
-  <a href="#"><img src="/Resources/images/mylogo.png" width="250" height="100"> </a>
+  <h1>MOHAMMAD ALTAMIMI</h1>
   <nav>
-      <ul class="nav__links">
-          <li><a href="#">About Me</a></li>
+      <ul class="nav-links">
+
+          <li><a href="/About.html">About Me</a></li>
           <li><a href="#">Resume</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="/blogs.html">Blog</a></li>
           <li><a href="#">Contact</a></li>
-          
-     
+          <li><a href="https://github.com/maltamimi96"><i class="fab fa-github fa-2x"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/mohammad-tamim-51819613a/"><i class="fab fa-linkedin fa-2x"></i></a></li>
+
+
       </ul>
   </nav>
 
-  <ul>
-      <li><img src="/Resources/images/github.svg" width="100" height="40"></li>
-      <li><img src="/Resources/images/linkedin-square.svg" width="100" height="40"></li>
-      <i class="fab fa-github"></i>
-
-
-      
-  </ul>
-
 </header>
-
-
 `;
 
 class navBar extends HTMLElement {
