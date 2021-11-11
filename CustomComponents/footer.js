@@ -1,7 +1,9 @@
 class footer extends HTMLElement {
     constructor() {
         super();
-        this.innerHtml =`    <footer>
+        this.innerHtml =`
+        
+        <footer>
         <ul class="socials">
             <a href="#"><li>Facebook</li></a>
             <a href="#"><li>Instagram</li></a>
@@ -13,8 +15,6 @@ class footer extends HTMLElement {
 
     </footer>
 `;
-         
-        
     }
 
 }
