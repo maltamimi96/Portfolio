@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500;700&display=swap");
+button:hover {
+  box-shadow: 0 40px 80px 0 rgba(13, 183, 250, 0.2);
+  background-color: #494747;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 body {
@@ -19,20 +17,42 @@ body {
   color: white;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 button {
   background-color: #007ced;
   padding: 7px 35px;
-  border-radius: 60px;
+  border-radius: 4px;
   color: white;
   font-size: 18px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
   transition: 0.3s;
   text-align: center;
-}
-
-button:hover {
-  box-shadow: 0 40px 80px 0 rgba(13, 183, 250, 0.2);
-  background-color: #494747;
 }
 
 i {
@@ -58,10 +78,6 @@ a:hover {
 header {
   display: flex;
   justify-content: space-between;
-  align-content: baseline;
-  margin-bottom: 100px;
-  border-bottom: solid;
-  border-color: #494747;
 }
 header h1 {
   padding-left: 15px;
@@ -87,73 +103,23 @@ main {
   align-items: center;
   background-color: #494747;
 }
-
-.row-home {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: flex-start;
-}
-
-textarea {
-  max-width: 800px;
-  min-width: 400px;
-  max-height: 600px;
-  min-height: 300px;
-  background-color: #494747;
-  border-radius: 4px;
-}
-
-input {
-  background-color: #494747;
-  border-radius: 4px;
-  height: 50px;
-}
-
-.block-home {
+main .block {
   width: 50%;
+  height: 100%;
   display: flex;
-  justify-self: start;
   flex-direction: column;
   overflow: hidden;
   max-height: 600px;
 }
-.block-home h2,
-.block-home h1,
-.block-home p {
+main .block h2,
+main .block h1,
+main .block p {
   padding-left: 25px;
 }
-.block-home img {
+main .block img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.skill-field {
-  display: flex;
-  flex-basis: 800px;
-  max-height: 400px;
-}
-.skill-field .icon {
-  margin-right: 20px;
-}
-.skill-field h1 {
-  margin: 0;
-  padding: 0;
 }
 
 .banner {
@@ -176,10 +142,9 @@ input {
   margin: 1px;
 }
 
-.container {
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
+#con-image {
+  width: 100%;
+  height: 100%;
 }
 
 .card {
@@ -243,21 +208,15 @@ input {
 }
 
 .blog-header {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 400px;
   border-radius: 1em;
-  overflow: hidden;
-  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
-  margin: 5px;
-  background-color: #494747;
   overflow: hidden;
 }
 .blog-header img {
   max-width: 100%;
   display: block;
-  object-fit: stretch;
+  object-fit: cover;
 }
 
 .blog-content {
@@ -278,77 +237,60 @@ input {
   height: 10px;
 }
 
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  border-top: solid;
-  border-color: #494747;
-  justify-content: flex-start;
-}
-footer .socials {
-  display: flex;
-}
-footer .socials li {
-  list-style: none;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-footer h4 {
-  margin-left: auto;
-  margin-right: 25px;
-  margin-top: 12px;
-  color: #007ced;
-}
-
-.contact-form {
-  background-color: #494747;
-  width: 100%;
-}
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.contact-form form input {
-  border-radius: 8px;
-  width: 400px;
-  height: 50px;
-}
 .pdf-container {
   display: flex;
   justify-content: center;
 }
 
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+textarea {
+  border-radius: 4px;
+  width: 80%;
+  height: 300px;
 }
 
-.row {
+input {
+  border-radius: 4px;
+  height: 50px;
+  width: 80%;
+}
+
+footer {
+  border-top: solid;
+  border-color: #494747;
+  border-width: 2px;
+}
+footer ul {
   display: flex;
   justify-content: flex-start;
+  gap: 10px;
 }
-.row label {
+footer li {
+  list-style: none;
+}
+footer #ar-res {
+  margin-left: auto;
   padding-right: 10px;
-  padding-left: 10px;
-}
-.row input {
-  background-color: #494747;
-  border-radius: 10px;
-  color: white;
-  width: 250px;
-}
-.row textarea {
-  width: 960px;
-  background-color: #494747;
-  border-radius: 10px;
-  color: white;
+  color: #007ced;
 }
 
 /*Responsive Design*/
 @media screen and (max-width: 960px) {
+  textarea {
+    border-radius: 4px;
+    width: 100%;
+    height: 300px;
+  }
+
+  input {
+    border-radius: 4px;
+    height: 50px;
+    width: 100%;
+  }
+
+  .wrapper {
+    margin: 0;
+  }
+
   .container {
     flex-direction: column;
   }
@@ -359,6 +301,16 @@ footer h4 {
 
   .skill-field {
     flex-direction: column;
+  }
+
+  .col {
+    align-items: center;
+  }
+  .col .send-button {
+    width: 100%;
+  }
+  .col .send-button button {
+    width: 100%;
   }
 
   header {
@@ -374,24 +326,25 @@ footer h4 {
   main {
     flex-direction: column;
   }
-}
-.pdf-container {
-  width: 100%;
-  height: 100;
-}
-.pdf-container iframe {
-  overflow: hidden;
-}
+  main .block {
+    width: 80%;
+  }
+  main .block img {
+    width: 100%;
+  }
 
-footer {
-  flex-direction: column;
-  align-items: center;
-}
-footer ul {
-  flex-wrap: wrap;
-}
-footer h4 {
-  margin-left: 0;
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  footer #ar-res {
+    margin-left: 0;
+    padding-right: 0;
+    color: #007ced;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
