@@ -1,20 +1,19 @@
 $primary-colour:#222;
 $secondary-colour:white;
 $third-colour:rgb(73, 71, 71);
+$fourth-colour:#007ced;
 $glow-colour:rgba(13, 183, 250, 0.2);
-$icon-colour:#007ced;
 $banner-colour:#252525;
 $border-colour:rgb(73, 71, 71);
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500;700&display=swap');
 // mixin for all buttons
 @mixin button () {
-    background-color: $icon-colour;
+    background-color: $fourth-colour;
+    padding: 7px 35px;
+    border-radius: 60px;
     color: $secondary-colour;
-    border-color: rgb(11, 94, 172);
-    font-size: 20px;
-    height: 3rem;
-    width: 12rem;
-    box-shadow: 0 4px 8px 0 $glow-colour;
+    font-size: 18px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
     transition: 0.3s;
     text-align: center;
 }
@@ -25,13 +24,20 @@ $border-colour:rgb(73, 71, 71);
     border-radius: 1em;
     font-size: .75rem;
     margin-left: .5em;
-    background: $icon-colour;
+    background: $fourth-colour;
     color: $secondary-colour;
 }
 
 * {
     box-sizing: border-box;
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 body {
@@ -42,24 +48,24 @@ body {
     color: $secondary-colour;
 }
 
-//button styling 
+//button styling
 button {
     @include button();
 }
 
 button:hover {
     box-shadow: 0 40px 80px 0 $glow-colour;
-    background-color: $icon-colour;
+    background-color: $third-colour;
 }
 
 // styling for icons
 i {
-    color: $icon-colour;
+    color: $fourth-colour;
     margin-right: 10px;
 }
 
 i:hover {
-    color: white;
+    color: $secondary-colour;
 }
 
 //anchor tag styling
@@ -71,13 +77,17 @@ a {
 }
 
 a:hover {
-    color: $icon-colour;
+    color: $fourth-colour;
 }
 
 // header/navbar/logo for all pages
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-content: baseline;
+    h1 {
+        padding-left: 15px;
+    }
     nav {
         display: flex;
         justify-content: space-around;
@@ -95,30 +105,71 @@ header {
     }
     margin-bottom: 100px;
     border-bottom: solid;
-    border-color:rgb(73,
-    71,
-    71);
+    border-color:$border-colour;
 }
 
+// main section on home page
 main {
-    padding: 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     background-color: $third-colour;
-    .right-main {
-        padding-left: 25px;
-    }
-    ;
 }
 
 //Row for Skills section on homepage
-.row {
+.row-home {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-left: 6%;
-    margin-right: 6%;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+textarea {
+    max-width: 800px;
+    min-width: 400px;
+    max-height: 600px;
+    min-height: 300px;
+    background-color: $third-colour;
+    border-radius: 4px;
+}
+
+input {
+    background-color: $third-colour;
+    border-radius: 4px;
+    height: 50px;
+}
+
+.block-home {
+    width: 50%;
+    display: flex;
+    justify-self: start;
+    flex-direction: column;
+    overflow: hidden;
+    h2,
+    h1,
+    p {
+        padding-left: 25px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    max-height: 600px;
 }
 
 .skill-field {
@@ -158,9 +209,8 @@ main {
 // card layout can be used for anything including blogs
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-around;
+    align-content: center;
 }
 
 .card {
@@ -252,7 +302,7 @@ main {
 
 //blue underline for stlying
 .sub-line {
-    background-color: $icon-colour;
+    background-color: $fourth-colour;
     width: 200px;
     height: 10px;
 }
@@ -275,7 +325,7 @@ footer {
         margin-left: auto;
         margin-right: 25px;
         margin-top: 12px;
-        color: $icon-colour;
+        color: $fourth-colour;
     }
 }
 
@@ -295,47 +345,85 @@ footer {
     }
 }
 
+//pdf-resume page
+.pdf-container {
+    display: flex;
+    justify-content: center;
+}
+
+//contact page
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    label {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    input {
+        background-color: $third-colour;
+        border-radius: 10px;
+        color: $secondary-colour;
+        width: 250px;
+    }
+    textarea {
+        width: 960px;
+        background-color: $third-colour;
+        border-radius: 10px;
+        color: $secondary-colour;
+    }
+}
+
 
 /*Responsive Design*/
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 960px) {
+    .container {
+        flex-direction: column;
+    }
     .row {
+        flex-direction: column;
+    }
+    .skill-field {
         flex-direction: column;
     }
     header {
         flex-direction: column;
         align-items: center;
+        overflow: hidden;
         nav {
             ul {
                 flex-direction: column;
+                width: 100%;
             }
         }
     }
     main {
         flex-direction: column;
-        .right-main {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            .main-buttons {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin: 20px;
-            }
-        }
-        ;
     }
-    footer {
-        flex-direction: column;
-        align-items: center;
-        ul {
-            flex-wrap: wrap;
-        }
-        h4 {
-            margin-left: 0;
-        }
+}
+
+.pdf-container {
+    width: 100%;
+    height: 100;
+    iframe {
+        overflow: hidden;
+    }
+}
+
+footer {
+    flex-direction: column;
+    align-items: center;
+    ul {
+        flex-wrap: wrap;
+    }
+    h4 {
+        margin-left: 0;
     }
 }
