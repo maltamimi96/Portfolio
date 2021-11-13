@@ -9,6 +9,20 @@ button:hover {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
 
+h1 {
+  font-size: 2vw;
+}
+
+h2 {
+  font-size: 1.5vw;
+}
+
+p,
+h4,
+label {
+  font-size: 1vw;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -29,19 +43,18 @@ body {
   display: flex;
   justify-content: space-around;
   align-content: center;
+  flex-wrap: wrap;
 }
 
 .row {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 button {
@@ -77,49 +90,69 @@ a:hover {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 header h1 {
   padding-left: 15px;
 }
 header nav {
   display: flex;
+  width: 100%;
   justify-content: space-around;
 }
 header ul {
   display: flex;
+  width: 100%;
 }
 header ul li {
   list-style: none;
   margin-right: 15px;
   padding-top: 10px;
-  font-size: 20px;
+  font-size: 1.5vw;
   text-align: center;
+}
+header ul #logo {
+  margin-right: auto;
+}
+header ul #logo a {
+  color: #007ced;
+}
+header ul #logo a:hover {
+  color: white;
 }
 
 main {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #494747;
+  align-items: stretch;
+  flex: 1 1;
+  overflow: hidden;
 }
 main .block {
-  width: 50%;
-  height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
-  overflow: hidden;
-  max-height: 600px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-main .block h2,
-main .block h1,
-main .block p {
-  padding-left: 25px;
+main .block-color {
+  background-color: #494747;
 }
-main .block img {
+main img {
+  height: 100%;
+  width: 100%;
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(60%);
+}
+
+.pdf {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+}
+.pdf iframe {
+  width: 100%;
+  height: 1000px;
 }
 
 .banner {
@@ -138,13 +171,7 @@ main .block img {
   margin-bottom: 50px;
 }
 .banner h1 {
-  font-size: 50px;
   margin: 1px;
-}
-
-#con-image {
-  width: 100%;
-  height: 100%;
 }
 
 .card {
@@ -237,21 +264,41 @@ main .block img {
   height: 10px;
 }
 
-.pdf-container {
+.contact-backgound {
+  background-image: url("/Resources/images/contactme.jpg");
+  background-size: cover;
+}
+
+.send-button {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-top: 10px;
 }
 
 textarea {
   border-radius: 4px;
-  width: 80%;
+  width: 100%;
   height: 300px;
+  background-color: #494747;
+  color: white;
+  font-size: 1vw;
+  resize: none;
+  border-color: #222;
+  border: solid;
+  border-width: 3px;
 }
 
 input {
   border-radius: 4px;
   height: 50px;
-  width: 80%;
+  width: 100%;
+  background-color: #494747;
+  color: white;
+  font-size: 1vw;
+  border-color: #222;
+  border: solid;
+  border-width: 3px;
 }
 
 footer {
@@ -273,18 +320,62 @@ footer #ar-res {
   color: #007ced;
 }
 
+h2 {
+  color: #007ced;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-between;
+  gap: 250px;
+}
+
 /*Responsive Design*/
 @media screen and (max-width: 960px) {
+  h1,
+a {
+    font-size: 7vw;
+  }
+
+  p,
+label {
+    font-size: 5vw;
+    padding: 5px;
+  }
+
+  h2 {
+    font-size: 6vw;
+  }
+
+  li {
+    font-size: 4vw;
+  }
+
   textarea {
     border-radius: 4px;
     width: 100%;
     height: 300px;
+    font-size: 5vw;
+    border-color: #222;
+    border: solid;
+    border-width: 3px;
   }
 
   input {
     border-radius: 4px;
     height: 50px;
     width: 100%;
+    font-size: 5vw;
+    border-color: #222;
+    border: solid;
+    border-width: 3px;
+  }
+
+  .send-button {
+    justify-content: center;
+  }
+  .send-button button {
+    width: 95%;
   }
 
   .wrapper {
@@ -301,10 +392,15 @@ footer #ar-res {
 
   .skill-field {
     flex-direction: column;
+    padding: 20px;
+  }
+
+  .skill-text {
+    padding: 5px;
   }
 
   .col {
-    align-items: center;
+    align-items: flex-start;
   }
   .col .send-button {
     width: 100%;
@@ -316,21 +412,35 @@ footer #ar-res {
   header {
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
   }
   header nav ul {
     flex-direction: column;
     width: 100%;
+  }
+  header nav ul #logo {
+    margin: 0;
   }
 
   main {
     flex-direction: column;
   }
   main .block {
-    width: 80%;
-  }
-  main .block img {
     width: 100%;
+    height: 100%;
+    padding-right: 1em;
+  }
+  main .block-background {
+    background-size: cover;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .blog-header img {
+    height: 100%;
   }
 
   footer ul {

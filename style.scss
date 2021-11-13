@@ -50,6 +50,20 @@ button:hover {
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
+h1 {
+    font-size: 2vw;
+}
+
+h2 {
+    font-size: 1.5vw;
+}
+
+p,
+h4,
+label {
+    font-size: 1vw;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -70,19 +84,18 @@ body {
     display: flex;
     justify-content: space-around;
     align-content: center;
+    flex-wrap: wrap;
 }
 
 .row {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .col {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 //button styling
@@ -115,23 +128,34 @@ a:hover {
 // header/navbar/logo for all pages
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     h1 {
         padding-left: 15px;
     }
     nav {
         display: flex;
+        width: 100%;
         justify-content: space-around;
         //nested logo list
     }
     ul {
         display: flex;
+        width: 100%;
         li {
             list-style: none;
             margin-right: 15px;
             padding-top: 10px;
-            font-size: 20px;
+            font-size: 1.5vw;
             text-align: center
+        }
+        #logo {
+            margin-right: auto;
+            a {
+                color: $fourth-colour;
+            }
+            a:hover {
+                color: $secondary-colour;
+            }
         }
     }
 }
@@ -139,26 +163,35 @@ header {
 // main section on home page
 main {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: $third-colour;
+    align-items: stretch;
+    flex: 1 1;
+    overflow: hidden;
     .block {
-        width: 50%;
-        height: 100%;
         display: flex;
+        justify-content: center;
+        align-items: flex-start;
         flex-direction: column;
-        overflow: hidden;
-        h2,
-        h1,
-        p {
-            padding-left: 25px;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        max-height: 600px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .block-color {
+        background-color: $third-colour;
+    }
+    img {
+        height: 100%;
+        width: 100%;
+        -webkit-filter: grayscale(100%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(60%);
+    }
+}
+
+.pdf {
+    width: 100%;
+    height: 100%;
+    iframe {
+        width: 100%;
+        height: 1000px;
     }
 }
 
@@ -178,14 +211,8 @@ main {
     margin-top: 50px;
     margin-bottom: 50px;
     h1 {
-        font-size: 50px;
         margin: 1px;
     }
-}
-
-#con-image {
-    width: 100%;
-    height: 100%;
 }
 
 // card layout can be used for anything including blogs
@@ -269,27 +296,45 @@ main {
     height: 10px;
 }
 
-//pdf-resume page
-.pdf-container {
-    display: flex;
-    justify-content: center;
+//contact page
+.contact-backgound {
+    background-image: url("/Resources/images/contactme.jpg");
+    background-size: cover;
 }
 
-//contact page
-.form-container {}
+.send-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
 
 textarea {
     border-radius: 4px;
-    width: 80%;
+    width: 100%;
     height: 300px;
+    background-color: $third-colour;
+    color: $secondary-colour;
+    font-size: 1vw;
+    resize: none;
+    border-color: $primary-colour;
+    border: solid;
+    border-width: 3px;
 }
 
 input {
     border-radius: 4px;
     height: 50px;
-    width: 80%;
+    width: 100%;
+    background-color: $third-colour;
+    color: $secondary-colour;
+    font-size: 1vw;
+    border-color: $primary-colour;
+    border: solid;
+    border-width: 3px;
 }
 
+//footer section
 footer {
     ul {
         display: flex;
@@ -309,19 +354,60 @@ footer {
     border-width: 2px;
 }
 
+//about me  page
+//projects
+h2 {
+    color: $fourth-colour;
+}
+
+.projects {
+    display: flex;
+    justify-content: space-between;
+    gap: 250px;
+}
+
 
 /*Responsive Design*/
 
 @media screen and (max-width: 960px) {
+    h1,
+    a {
+        font-size: 7vw;
+    }
+    p,
+    label {
+        font-size: 5vw;
+        padding: 5px;
+    }
+    h2 {
+        font-size: 6vw;
+    }
+    li {
+        font-size: 4vw;
+    }
     textarea {
         border-radius: 4px;
         width: 100%;
         height: 300px;
+        font-size: 5vw;
+        border-color: $primary-colour;
+        border: solid;
+        border-width: 3px;
     }
     input {
         border-radius: 4px;
         height: 50px;
         width: 100%;
+        font-size: 5vw;
+        border-color: $primary-colour;
+        border: solid;
+        border-width: 3px;
+    }
+    .send-button {
+        justify-content: center;
+        button {
+            width: 95%;
+        }
     }
     .wrapper {
         margin: 0;
@@ -334,9 +420,13 @@ footer {
     }
     .skill-field {
         flex-direction: column;
+        padding: 20px;
+    }
+    .skill-text {
+        padding: 5px;
     }
     .col {
-        align-items: center;
+        align-items: flex-start;
         .send-button {
             width: 100%;
             button {
@@ -347,21 +437,35 @@ footer {
     header {
         flex-direction: column;
         align-items: center;
-        overflow: hidden;
         nav {
             ul {
                 flex-direction: column;
                 width: 100%;
+                #logo {
+                    margin: 0;
+                }
             }
         }
     }
     main {
         flex-direction: column;
         .block {
-            width: 80%;
-            img {
-                width: 100%;
-            }
+            width: 100%;
+            height: 100%;
+            padding-right: 1em;
+        }
+        .block-background {
+            background-size: cover;
+        }
+    }
+    .projects {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+    .blog-header {
+        img {
+            height: 100%;
         }
     }
     footer {
