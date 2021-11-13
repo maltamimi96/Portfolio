@@ -1,20 +1,7 @@
-[]: https://github.com/maltamimi96/Portfolio
+https://github.com/maltamimi96/Portfolio
 
-# Description:
+Purpose:
+To Provide a personal website that enables me to showcase my skills and experience as well as being a means to get in touch with me.
 
-## Purpose:
-
-## Functionality/Features:
-
-## Sitemap:
-
-## Screenshots:
-
-## Target Audience:
-
-## Tech Stack:
-
-
-
-
+Functionality : 
 
