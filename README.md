@@ -32,7 +32,7 @@ To Provide a personal website that enables me to showcase my skills and experien
 
 ### 
 
-## Site-map ![](docs\SiteMap.png)
+## Site-map ![](docs/SiteMap.png)
 
 
 
@@ -46,19 +46,19 @@ To Provide a personal website that enables me to showcase my skills and experien
 
 ### **Desktop View**
 
-![](docs\home-page.png)
+![](docs/home-page.png)
 
-![](docs\Desktop-Nav Bar.png)
+![](docs/Desktop-Nav Bar.png)
 
-![](docs\Contact.png)
+![](docs/Contact.png)
 
-![](docs\cards.png)
+![](docs/cards.png)
 
 
 
 ## **Mobile View--Responsive Design**
 
-![mobile view](docs\mobile view.png)
+![mobile view](docs/mobile view.png)
 
 
 
