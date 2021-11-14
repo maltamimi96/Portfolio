@@ -27,7 +27,7 @@ To Provide a personal website that enables me to showcase my skills and experien
 
 ### 
 
-## Site-map ![](C:\Users\guap\Desktop\BootCamp\Portfolio\docs\SiteMap.png)
+## Site-map ![](docs/SiteMap.png)
 
 
 
