@@ -1,4 +1,9 @@
-[]: https://618fdf7164c9d5289bd7dde7--jolly-euclid-6854a1.netlify.app/index.html	"Live Website"
+### Live Site
+
+[]: https://mtamimportfolio.netlify.app/	"Live Website"
+
+### Repo Link
+
 []: https://github.com/maltamimi96/Portfolio	"Repository Link"
 
 
@@ -27,7 +32,7 @@ To Provide a personal website that enables me to showcase my skills and experien
 
 ### 
 
-## Site-map ![](docs/SiteMap.png)
+## Site-map ![](docs\SiteMap.png)
 
 
 
@@ -39,15 +44,25 @@ To Provide a personal website that enables me to showcase my skills and experien
 
 ## Screenshots:
 
-### Index.html 
+### **Desktop View**
 
-![home-page](C:\Users\guap\Desktop\BootCamp\Portfolio\docs\home-page.png)
+![](docs\home-page.png)
 
-**Desktop View**
+![](docs\Desktop-Nav Bar.png)
 
-![mobile view](C:\Users\guap\Desktop\BootCamp\Portfolio\docs\mobile view.png)
+![](docs\Contact.png)
 
-**Mobile View--Responsive Design**
+![](docs\cards.png)
+
+
+
+## **Mobile View--Responsive Design**
+
+![mobile view](docs\mobile view.png)
+
+
+
+
 
 ## Target Audience:
 
