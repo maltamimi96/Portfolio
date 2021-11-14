@@ -1,0 +1,485 @@
+$primary-colour:#222;
+$secondary-colour:white;
+$third-colour:rgb(73, 71, 71);
+$fourth-colour:#007ced;
+$glow-colour:rgba(13, 183, 250, 0.2);
+$banner-colour:#252525;
+$border-colour:rgb(73, 71, 71);
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500;700&display=swap');
+// mixin for all buttons
+@mixin button () {
+    background-color: $fourth-colour;
+    padding: 7px 35px;
+    border-radius: 4px;
+    color: $secondary-colour;
+    font-size: 18px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
+    text-align: center;
+}
+
+button:hover {
+    box-shadow: 0 40px 80px 0 $glow-colour;
+    background-color: $third-colour;
+}
+
+@mixin tag() {
+    align-self: flex-start;
+    padding: .25em .75em;
+    border-radius: 1em;
+    font-size: .75rem;
+    margin-left: .5em;
+    background: $fourth-colour;
+    color: $secondary-colour;
+}
+
+@mixin card {
+    display: flex;
+    flex-direction: column;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    background-color: $third-colour;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+h1 {
+    font-size: 2vw;
+}
+
+h2 {
+    font-size: 1.5vw;
+}
+
+p,
+h4,
+label {
+    font-size: 1vw;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: $primary-colour;
+    color: $secondary-colour;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+//button styling
+button {
+    @include button();
+}
+
+// styling for icons
+i {
+    color: $fourth-colour;
+    margin-right: 10px;
+}
+
+i:hover {
+    color: $secondary-colour;
+}
+
+//anchor tag styling
+a {
+    font-weight: 500;
+    color: $secondary-colour;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: $fourth-colour;
+}
+
+// header/navbar/logo for all pages
+header {
+    display: flex;
+    justify-content: flex-start;
+    h1 {
+        padding-left: 15px;
+    }
+    nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        //nested logo list
+    }
+    ul {
+        display: flex;
+        width: 100%;
+        li {
+            list-style: none;
+            margin-right: 15px;
+            padding-top: 10px;
+            font-size: 1.5vw;
+            text-align: center
+        }
+        #logo {
+            margin-right: auto;
+            a {
+                color: $fourth-colour;
+            }
+            a:hover {
+                color: $secondary-colour;
+            }
+        }
+    }
+}
+
+// main section on home page
+main {
+    display: flex;
+    align-items: stretch;
+    flex: 1 1;
+    overflow: hidden;
+    .block {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .block-color {
+        background-color: $third-colour;
+    }
+    img {
+        height: 100%;
+        width: 100%;
+        -webkit-filter: grayscale(100%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(60%);
+    }
+}
+
+.pdf {
+    width: 100%;
+    height: 100%;
+    iframe {
+        width: 100%;
+        height: 1000px;
+    }
+}
+
+//contains Headings for sections
+.banner {
+    width: 100%;
+    background-color: $banner-colour;
+    height: 200px;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: $border-colour;
+    border-width: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    h1 {
+        margin: 1px;
+    }
+}
+
+// card layout can be used for anything including blogs
+.card {
+    @include card();
+    img {
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+.card__body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    h4 {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        margin: 0;
+    }
+    background-color: $third-colour;
+    p {
+        margin: 0;
+    }
+}
+
+.tag {
+    @include tag();
+}
+
+.card__footer {
+    display: flex;
+    padding: 1rem;
+    margin-top: auto;
+    background-color: $third-colour;
+    .user {
+        display: flex;
+        gap: .5rem;
+    }
+    .user__image {
+        border-radius: 50%;
+    }
+    .user__info {
+        small {
+            color: greenyellow;
+        }
+    }
+}
+
+// styling for each individual blog
+.blog-header {
+    width: 100%;
+    height: 400px;
+    border-radius: 1em;
+    overflow: hidden;
+    img {
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 1em;
+    background-color: $third-colour;
+    border-radius: 1em;
+    p {
+        margin: 1em;
+    }
+}
+
+//blue underline for stlying
+.sub-line {
+    background-color: $fourth-colour;
+    width: 200px;
+    height: 10px;
+}
+
+//contact page
+.contact-backgound {
+    background-image: url("/Resources/images/contactme.jpg");
+    background-size: cover;
+}
+
+.send-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+textarea {
+    border-radius: 4px;
+    width: 100%;
+    height: 300px;
+    background-color: $third-colour;
+    color: $secondary-colour;
+    font-size: 1vw;
+    resize: none;
+    border-color: $primary-colour;
+    border: solid;
+    border-width: 3px;
+}
+
+input {
+    border-radius: 4px;
+    height: 50px;
+    width: 100%;
+    background-color: $third-colour;
+    color: $secondary-colour;
+    font-size: 1vw;
+    border-color: $primary-colour;
+    border: solid;
+    border-width: 3px;
+}
+
+//footer section
+footer {
+    ul {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    li {
+        list-style: none;
+    }
+    #ar-res {
+        margin-left: auto;
+        padding-right: 10px;
+        color: $fourth-colour;
+    }
+    border-top:solid;
+    border-color: $border-colour;
+    border-width: 2px;
+}
+
+//about me  page
+//projects
+h2 {
+    color: $fourth-colour;
+}
+
+.projects {
+    display: flex;
+    justify-content: space-between;
+    gap: 250px;
+}
+
+
+/*Responsive Design*/
+
+@media screen and (max-width: 960px) {
+    h1,
+    a {
+        font-size: 7vw;
+    }
+    p,
+    label {
+        font-size: 5vw;
+        padding: 5px;
+    }
+    h2 {
+        font-size: 6vw;
+    }
+    li {
+        font-size: 4vw;
+    }
+    textarea {
+        border-radius: 4px;
+        width: 100%;
+        height: 300px;
+        font-size: 5vw;
+        border-color: $primary-colour;
+        border: solid;
+        border-width: 3px;
+    }
+    input {
+        border-radius: 4px;
+        height: 50px;
+        width: 100%;
+        font-size: 5vw;
+        border-color: $primary-colour;
+        border: solid;
+        border-width: 3px;
+    }
+    .send-button {
+        justify-content: center;
+        button {
+            width: 95%;
+        }
+    }
+    .wrapper {
+        margin: 0;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .skill-field {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .skill-text {
+        padding: 5px;
+    }
+    .col {
+        align-items: flex-start;
+        .send-button {
+            width: 100%;
+            button {
+                width: 100%;
+            }
+        }
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        nav {
+            ul {
+                flex-direction: column;
+                width: 100%;
+                #logo {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    main {
+        flex-direction: column;
+        .block {
+            width: 100%;
+            height: 100%;
+            padding-right: 1em;
+        }
+        .block-background {
+            background-size: cover;
+        }
+    }
+    .projects {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+    .blog-header {
+        img {
+            height: 100%;
+        }
+    }
+    footer {
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        #ar-res {
+            margin-left: 0;
+            padding-right: 0;
+            color: $fourth-colour;
+        }
+    }
+}
